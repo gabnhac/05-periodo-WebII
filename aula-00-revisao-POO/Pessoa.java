@@ -43,6 +43,6 @@ public class Pessoa {
 
     @Override
     public String toString(){
-        return "Pessoa{Nome=" + this.getNome() + ", Idade=" + getIdade() + ", CPF=" + getCpf() + "}";
+        return "Pessoa{Nome=" + this.getNome() + ", Idade=" + getIdade() + ", CPF=" + getCpf();
     }
 }
