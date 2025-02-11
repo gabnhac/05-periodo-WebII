@@ -45,4 +45,9 @@ public class Disciplina {
     public void addAluno(Aluno aluno){
         this.aluno.add(aluno);
     }
+
+    @Override
+    public String toString(){
+        return "Disciplina{nome=" + getNomeDisciplina() + ", alunos=" + getAlunos() + ", professores=" + getProfessores() + "}";
+    }
 }
