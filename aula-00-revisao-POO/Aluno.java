@@ -3,11 +3,10 @@ public class Aluno extends Pessoa{
 
     public Aluno(){
         this("",0,0l,0);
-
     }
 
     public Aluno(String nome, int idade){
-        this(nome,idade,0l,0);
+        this(nome,idade, 0l, 0);
     }
 
     public Aluno(String nome, int idade, long cpf, int matriculaAluno){
@@ -15,15 +14,18 @@ public class Aluno extends Pessoa{
         this.matriculaAluno = matriculaAluno;
     }
 
-    public int getMatriculaAluno() {
-        return matriculaAluno;
-    }
-    public void setMatriculaAluno(int matriculaAluno) {
+    public void setMatriculaAluno(int matriculaAluno){
         this.matriculaAluno = matriculaAluno;
+    }
+
+    public int getMatriculaAluno(){
+        return this.matriculaAluno;
     }
 
     @Override
     public String toString(){
-        return "Aluno{" + super.toString() + ", matricula=" + getMatriculaAluno() + "}";
+        return "Aluno{" + super.toString() +
+                ", matricula=" + getMatriculaAluno() + "}";
     }
+
 }
