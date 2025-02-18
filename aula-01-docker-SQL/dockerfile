@@ -1,0 +1,15 @@
+# Usando uma imagem base leve 
+FROM alpine:latest
+
+# Intalação do SQLite
+RUN apk add --no-cache sqlite
+
+# Diretorio de trabalho
+WORKDIR /data
+
+# Entrada padrão do container
+CMD [ "sqlite3" ]
+
+# Comandos usados: docker-compose build e docker-compose up -d
+# Imagem do container: docker ps
+# 
