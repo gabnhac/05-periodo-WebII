@@ -3,32 +3,35 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Pessoas</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Detalhes do produto</title>
+     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 
 <body>
+
     <div th:replace="fragments/navbar :: navbar"></div>
 
     <main class="main-content">
-        <h1>Lista de Pessoas</h1>
+        <h1>Detalhes</h1>
+        
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
-                    <th>Idade</th>
+                    <th>Quantidade</th>
                     <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="pessoa: ${lista}">
-                    <td th:text="${pessoa.id}"></td>
-                    <td th:text="${pessoa.nome}"></td>
-                    <td th:text="${pessoa.idade}"></td>
+                <tr>
+                    <td th:text="${produto.id}"></td>
+                    <td th:text="${produto.nome}"></td>
+                    <td th:text="${produto.quantidade}"></td>
                     <td>
-                        <a th:href="@{/pessoas/{id}(id=${pessoa.id})}" class="botao">Detalhes</a>
+                        <form th:action="@{/produtos/{id}/excluir(id=${produto.id})}" method="post">
+                            <button type="submit" class="botao">Excluir</button>
+                        </form>
                     </td>
                 </tr>
             </tbody>
